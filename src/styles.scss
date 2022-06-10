@@ -1,0 +1,40 @@
+/* Global */
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+.mat-card-header-text {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 !important;
+}
+
+.mat-paginator {
+    .mat-paginator-container {
+        justify-content: center !important;
+
+        .mat-paginator-page-size {
+            display: none;
+        }
+    }
+}
+
+.mat-chip-list-wrapper {
+    display: inline-flex !important;
+}
+
+.mat-grid-tile-content {
+    flex-direction: column;
+}
+
+.mat-card-actions {
+    display: flex !important;
+    justify-content: center;
+    margin: 0 !important;
+    padding: 0 !important;
+}

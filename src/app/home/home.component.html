@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="row">
+        <!--Filter by field-->
+        <form #searchForm="ngForm"
+            (ngSubmit)="getAllUsers(searchForm.form.value.selectedField, searchForm.form.value.searchValue)"
+            class="filter py-3 mb-3">
+            <mat-form-field class="me-2">
+                <mat-label>Select field</mat-label>
+                <mat-select name="selectedField" ngModel #selectedField="ngModel">
+                    <mat-option *ngFor="let field of availableFields" [value]="field">
+                        {{field}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="text-white me-2">
+                <mat-label>Value</mat-label>
+                <input matInput type="text" name="searchValue" ngModel #searchValue="ngModel">
+            </mat-form-field>
+
+            <button mat-raised-button class="me-2" type="submit">Filter</button>
+            <button mat-raised-button (click)="searchForm.reset()">Reset</button>
+        </form>
+
+        <div *ngFor="let user of userList" class="user-card col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+            <app-card [item]="user"></app-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,87 @@
+<div class="container-fluid pt-3">
+    <div class="row">
+        <div class="offset-sm-3 col-sm-6 offset-sm-4 
+                    offset-md-4 col-md-4 offset-lg-4 
+                    col-lg-4 offset-xl-4 col-xl-4 
+                    offset-xxl-3 col-xxl-3">
+            <mat-card class="example-card">
+                <form #newUserForm="ngForm" class="new-user-form" (ngSubmit)="createUser(newUserForm)">
+                    <div ngModelGroup="general">
+                        <h3>Geneal Information</h3>
+                        <mat-form-field class="w-100">
+                            <input matInput placeholder="Name" name="name" ngModel #name="ngModel" required>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-100">
+                            <input matInput placeholder="Username" name="username" ngModel #username="ngModel" required>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-100">
+                            <input matInput placeholder="Email" type="email" name="email" ngModel #email="ngModel"
+                                required email>
+
+                            <mat-error>
+                                This is not a valid email
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-100">
+                            <input matInput placeholder="Phone" name="phone" ngModel #phone="ngModel" required>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-100">
+                            <input matInput placeholder="Website" name="website" ngModel #website="ngModel" required>
+                        </mat-form-field>
+                    </div>
+
+                    <div ngModelGroup="address">
+                        <h3>Address</h3>
+                        <mat-form-field class="w-100">
+                            <input matInput placeholder="Suite" name="suite" ngModel #suite="ngModel" required>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-100">
+                            <input matInput placeholder="Street" name="street" ngModel #street="ngModel" required>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-50">
+                            <input matInput placeholder="City" name="city" ngModel #city="ngModel" required>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-50">
+                            <input matInput placeholder="Zipcode" name="zipcode" ngModel #zipcode="ngModel" required>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-50">
+                            <input matInput placeholder="Lat" name="lat" ngModel #lat="ngModel" required>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-50">
+                            <input matInput placeholder="Lng" name="lng" ngModel #lng="ngModel" required>
+                        </mat-form-field>
+                    </div>
+
+                    <div ngModelGroup="company">
+                        <h3>Company</h3>
+                        <mat-form-field class="w-100">
+                            <input matInput placeholder="Company Name" name="companyName" ngModel #companyName="ngModel"
+                                required>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-100">
+                            <input matInput placeholder="Catch phrase" name="companyCatchPhrase" ngModel
+                                #companyCatchPhrase="ngModel" required>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-100">
+                            <input matInput placeholder="BS" name="companyBs" ngModel #companyBs="ngModel" required>
+                        </mat-form-field>
+                    </div>
+
+                    <button mat-raised-button color="primary" type="submit" [disabled]="!newUserForm.valid">Create
+                        User</button>
+                </form>
+            </mat-card>
+        </div>
+    </div>
+</div>

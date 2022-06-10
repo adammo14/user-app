@@ -1,0 +1,19 @@
+<mat-card class="bkg2-bg text mb-3" *ngIf="user">
+    <mat-card-header class="header">
+        <mat-card-title class="title">
+            <h2 class="m-0">{{user.name}}</h2>
+        </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="text-center">
+        <p>Username: {{user.username}}</p>
+        <p>Email: {{user.email}}</p>
+        <p>Phone: {{user.phone}}</p>
+        <p>Website: {{user.website}}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+        <button mat-stroked-button [routerLink]="['/info', user.id]">View</button>
+        <button mat-stroked-button (click)="deleteUser(user.id)">Delete</button>
+    </mat-card-actions>
+</mat-card>
